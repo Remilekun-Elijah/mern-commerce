@@ -1,0 +1,19 @@
+.footer {
+  background-color: var(--color-secondary);
+  padding: 2.5rem 0;
+
+  // position: absolute;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  height: 8rem;
+}
+.copyright {
+  text-align: center;
+  color: #aaa;
+  font-size: 1.5rem;
+  & span {
+    color: #ffffffe6;
+    font-weight: 600;
+  }
+}

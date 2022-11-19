@@ -1,0 +1,267 @@
+.cart {
+  grid-column: center-start/center-end;
+
+  display: grid;
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  margin: 2rem 0;
+
+  @include respond(tab-port) {
+    grid-column: full-start/full-end;
+    margin: 1.5rem 2rem;
+  }
+  @include respond(phone) {
+    margin: 2rem 1rem;
+  }
+
+  &__heading {
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 30rem repeat(4, 1fr);
+    justify-content: center;
+    justify-items: center;
+    border-bottom: var(--line);
+    padding: 2rem 0;
+    gap: 3rem;
+
+    @include respond(tab-land) {
+      grid-template-columns: 25rem repeat(4, 1fr);
+    }
+    @include respond(phone) {
+      grid-template-columns: 10rem repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    & > * {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__content {
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 30rem repeat(4, 1fr);
+    grid-auto-rows: min-content;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    gap: 2rem 3rem;
+    padding: 0.5rem 0;
+
+    @include respond(tab-land) {
+      grid-template-columns: 25rem repeat(4, 1fr);
+    }
+
+    @include respond(phone) {
+      grid-template-columns: 10rem repeat(4, 1fr);
+      gap: 2rem 2rem;
+    }
+
+    & > * {
+      font-size: 1.4rem;
+
+      @include respond(tab-port) {
+        font-size: 1.3rem;
+      }
+
+      @include respond(phone) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &__fig {
+    display: flex;
+    align-items: center;
+    @include respond(phone) {
+      flex-direction: column;
+    }
+  }
+
+  &__photo {
+    width: 12rem;
+    height: 13rem;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-right: 0.5rem;
+
+    @include respond(tab-port) {
+      margin-left: 1.2rem;
+      width: 10rem;
+      height: 10rem;
+    }
+
+    @include respond(phone) {
+      margin-left: 0.5rem;
+      width: 9rem;
+      height: 9rem;
+      margin-bottom: 0.15rem;
+    }
+  }
+
+  &__title {
+    flex: 0 0 60%;
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    line-height: 1;
+
+    @include respond(tab-port) {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+
+    @include respond(phone) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__quantity {
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    align-items: center;
+    justify-items: center;
+    gap: 1.5rem;
+
+    @include respond(tab-land) {
+      gap: 0.5rem;
+    }
+
+    @include respond(phone) {
+      gap: 1rem;
+    }
+
+    & > * {
+      background-color: transparent;
+      font-size: 1.5rem;
+      color: inherit;
+    }
+
+    & > :first-child,
+    & > :last-child {
+      padding: 0 2rem;
+      @include respond(phone) {
+        padding: 0 0.2rem;
+      }
+    }
+    & > :first-child,
+    & > :last-child {
+      padding: 0 2rem;
+      @include respond(phone) {
+        padding: 0 0.2rem;
+        font-size: 1.2rem;
+        color: inherit;
+        font-weight: 100;
+      }
+    }
+
+    @include respond(phone) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__amount {
+    font-size: 2rem;
+    @include respond(phone) {
+      font-size: 1.7rem;
+    }
+  }
+
+  &__remove {
+    cursor: pointer;
+    font-size: 2.5rem;
+    background-color: transparent;
+    color: inherit;
+    border: none;
+
+    @include respond(phone) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+button {
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.cart-more {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+  border-top: var(--line);
+  & > * {
+    font-size: 1.7rem;
+    background-color: transparent;
+    border: none;
+
+    color: #f9f7f6;
+    padding: 1rem 1rem;
+
+    @include respond(phone) {
+      font-size: 1.4rem;
+      padding: 0.5rem;
+    }
+  }
+
+  &__continue {
+    background-color: var(--color-primary);
+    margin-left: 1.5rem;
+    text-decoration: none;
+  }
+  &__clear {
+    background-color: var(--color-grey-dark-1);
+    margin-right: 1.5rem;
+  }
+}
+
+.cart-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+
+  & > * {
+    font-size: 1.7rem;
+    border: none;
+    padding: 1rem 1rem;
+
+    @include respond(phone) {
+      font-size: 1.4rem;
+      padding: 0.5rem;
+    }
+  }
+
+  & span {
+    display: inline-block;
+  }
+
+  &__total {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.7rem;
+  }
+
+  &__empty {
+    font-size: 2rem;
+    text-transform: uppercase;
+    background-color: var(--color-primary);
+    padding: 1rem 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    &:link,
+    &:visited {
+      background-color: var(--color-primary);
+    }
+
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+  }
+}

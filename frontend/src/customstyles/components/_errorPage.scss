@@ -1,0 +1,33 @@
+.error {
+  grid-column: full-start/full-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+
+  & h1 {
+    font-size: 5rem;
+  }
+  & h3 {
+    font-size: 2.7rem;
+  }
+
+  &__btn {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    background-color: var(--color-primary);
+    padding: 1rem 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    &:link,
+    &:visited {
+      background-color: var(--color-primary);
+    }
+
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+  }
+}

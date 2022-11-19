@@ -1,0 +1,59 @@
+.listView {
+  grid-column: center-start/center-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 7rem;
+  margin: 2.5rem 0;
+}
+.productList {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  justify-items: center;
+  justify-items: center;
+  box-shadow: var(--shadow-light);
+
+  & > * {
+    background-color: #fff;
+  }
+
+  &__fig {
+    display: grid;
+    grid-template-rows: 30rem min-content;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+  & footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > * {
+      color: inherit;
+      font-size: 1.25rem;
+      padding: 0.8rem 1.3rem;
+      line-height: 1;
+      text-transform: capitalize;
+    }
+  }
+
+  &__description {
+    padding: 0 1.5rem;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  & a:link,
+  & a:visited {
+    text-decoration: none;
+  }
+
+  & a:hover,
+  & a:active {
+    color: var(--color-primary);
+  }
+}

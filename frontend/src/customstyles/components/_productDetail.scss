@@ -1,0 +1,165 @@
+.detail {
+  grid-column: center-start/center-end;
+  margin-top: 2rem;
+
+  @include respond(phone) {
+    grid-column: full-start/full-end;
+    margin: 2.5rem 2rem 0 2rem;
+  }
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min-content, 50rem));
+
+  gap: 1.5rem 4rem;
+
+  @include respond(tab-land) {
+    grid-template-columns: 45rem 40rem;
+  }
+
+  @include respond(tab-port) {
+    grid-template-columns: 100%;
+  }
+
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+
+  &__fig {
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 55vh min-content;
+    align-items: center;
+    justify-items: center;
+
+    @include respond(tab-land) {
+      grid-template-rows: 35vh min-content;
+    }
+    @include respond(phone) {
+      grid-template-rows: 45vh min-content;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+  &__gallery {
+    display: flex;
+  }
+
+  &__photo {
+    height: 6.5rem;
+    width: 6.5rem;
+    margin-top: 0.7rem;
+    margin-left: 0.4rem;
+
+    & > *:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+    & > * {
+      border: 2px solid var(--color-primary-light);
+      cursor: pointer;
+      height: 100%;
+      width: 100%;
+      border-radius: 2px;
+    }
+  }
+  &__active-image {
+    border: 2px solid var(--color-primary);
+  }
+  &__desc {
+    padding: 1.2rem 1.5rem;
+
+    & h3 {
+      font-size: 1.9rem;
+    }
+  }
+}
+.rating {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 8.5rem;
+  align-items: center;
+  font-size: 2rem;
+  margin: 2rem 0;
+  padding-bottom: 1rem;
+  border-bottom: var(--line);
+  &__stars {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+  }
+  &__count {
+    justify-self: center;
+    font-size: 1.5rem;
+  }
+}
+
+.more-info {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  align-items: center;
+  gap: 2rem 8.5rem;
+
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: var(--line);
+
+  & h3 {
+    color: inherit;
+    font-size: 1.5rem;
+  }
+
+  & p {
+    font-size: 1.35rem;
+    text-transform: capitalize;
+  }
+}
+
+.add-to-cart {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 1.5rem 2.5rem;
+  align-items: center;
+  justify-items: center;
+  font-size: 3rem;
+
+  & > *:not(:last-child) {
+    background-color: transparent;
+    color: inherit;
+  }
+  & > * {
+    color: inherit;
+  }
+  & button {
+    border: none;
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__num {
+    font-size: 6rem;
+  }
+
+  &__btn {
+    grid-column: 1/-1;
+    text-transform: uppercase;
+    font-size: 2rem;
+    background-color: var(--color-primary);
+    padding: 1rem;
+    color: #fff;
+    text-decoration: none;
+    &:link,
+    &:visited {
+      background-color: var(--color-primary);
+    }
+
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+  }
+}

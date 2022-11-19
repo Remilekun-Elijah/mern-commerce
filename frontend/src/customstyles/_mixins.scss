@@ -1,0 +1,40 @@
+/////  MEDIA QUERY MANAGER
+/*
+$Breakpont arqument choices:
+--Phone       0 - 600px
+--tab-port    600 - 900px
+--tab-land    900 - 1200px
+--Destop      > 1200px [ Where our normal styles apply ] 
+*/
+
+// 1em = 16px
+
+@mixin respond($breakpoint) {
+  @if $breakpoint==phone {
+    @media (max-width: 37.5em) {
+      /////600px
+      @content;
+    }
+  }
+  @if $breakpoint==tab-port {
+    @media (max-width: 56.25em) {
+      //////900px
+      @content;
+    }
+  }
+  @if $breakpoint==tab-land {
+    @media (max-width: 75em) {
+      /////1200px
+      @content;
+    }
+  }
+}
+
+@mixin grid-template-columns {
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr) [center-start]repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    )
+    [center-end] minmax(6rem, 1fr) [full-end];
+}

@@ -1,0 +1,29 @@
+.pageHero {
+  grid-column: full-start/full-end;
+  grid-row: 1/2;
+  align-self: start;
+  color: #f9f7f6;
+  background-color: var(--color-primary);
+  border-bottom: var(--line);
+  margin: 0.2rem 0 0 0;
+  padding: 5.5rem 6rem;
+  @include respond(phone) {
+    padding: 4rem 2rem;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    color: #f9f7f6;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5rem;
+  }
+  & a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 400;
+    font-size: 1.8rem;
+    cursor: pointer;
+    text-transform: capitalize;
+  }
+}

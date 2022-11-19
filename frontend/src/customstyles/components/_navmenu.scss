@@ -1,0 +1,35 @@
+.navbar {
+  display: none;
+  background-color: var(--color-grey-light-2);
+  padding-bottom: 3rem;
+  @include respond(phone) {
+    grid-column: full-start/full-end;
+    display: block;
+  }
+}
+.heading-3 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 1rem 0 1rem 3.2rem;
+  background-color: var(--color-grey-light-3);
+  color: var(--color-grey-dark-1);
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: max-content;
+  gap: 2rem;
+  margin-left: 3.5rem;
+  &__item {
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    display: block;
+  }
+  &__link {
+    text-decoration: none;
+    color: var(--color-grey-dark-1);
+    font-weight: 300;
+    cursor: pointer;
+  }
+}

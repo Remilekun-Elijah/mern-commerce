@@ -1,0 +1,76 @@
+.select {
+  grid-column: full-start/full-end;
+  grid-row: 2/3;
+  align-self: start;
+  background-color: #fff;
+
+  position: relative;
+
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  align-items: center;
+
+  border-bottom: var(--line);
+
+  @include respond(phone) {
+    grid-template-columns: min-content 1fr 1fr;
+  }
+
+  &__view {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    gap: 0.15rem;
+    margin-left: 2rem;
+    font-size: 2rem;
+
+    @include respond(phone) {
+      margin-left: 0.8rem;
+    }
+
+    & > * {
+      cursor: pointer;
+    }
+  }
+
+  &__price-range {
+    margin-left: auto;
+
+    & :first-child {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    & :last-child {
+      cursor: pointer;
+    }
+  }
+  &__price {
+    display: grid;
+    align-items: center;
+    gap: 1rem;
+    grid-template-columns: max-content 1fr;
+    margin-right: 3rem;
+    @include respond(phone) {
+      margin-right: 1rem;
+      gap: 0.4rem;
+    }
+    & label {
+      font-size: 1.5rem;
+      margin-left: 0.5rem;
+      font-weight: 600;
+    }
+    &-order {
+      display: inline-block;
+      height: 3rem;
+      width: 15rem;
+      outline: none;
+      color: inherit;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      background: #eee;
+    }
+  }
+}
+
+.active--view {
+  color: var(--color-primary);
+}

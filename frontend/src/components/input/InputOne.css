@@ -1,0 +1,37 @@
+.input-label, label {
+ font-family: 'Inter';
+ font-style: normal;
+ font-weight: 500;
+ font-size: 15px;
+ line-height: 18px;
+ color: var(--C_black);
+ border: none !important;
+}
+
+
+.custom-input :where(.input_wrapper, input), select, textarea {
+ background: #e9edff;
+ border-radius: 4px;
+}
+
+.input_wrapper .icon {
+ cursor: pointer;
+}
+.passStrength {
+ height: 10px;
+ width: 120px;
+ background-color: #e9edff;
+ right: 0;
+ bottom: 8px;
+}
+.passStrength .progress {
+ height: 100%;
+ position: inherit;
+ left: 0;
+ background-color: var(--C_danger);
+ transition: all 0.3s ease-in-out;
+}
+
+.error{
+ border: 1px solid var(--C_danger);
+}

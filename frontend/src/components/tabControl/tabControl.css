@@ -1,0 +1,51 @@
+.tabControl {
+    padding: 8px !important;
+    overflow-x: scroll;
+    color: #1D2E3D;
+    margin: 5px;
+    /* scrollbar-width: #2B6112; */
+  }
+  
+  .tabControl::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .tabControl .tabControl__tab {
+    display: inline-block;
+    
+    margin-top: 16px;
+    padding: 10px;
+    margin-right: 30px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    white-space: nowrap;
+    color: #1D2E3D;
+  }
+  
+  .tabControl .tabControlItem:hover {
+
+    opacity: .8;
+  }
+
+  
+  
+  .tabControl .tabControl__tab--active {
+    background-color: #000;
+    
+    color: white;
+  }
+  /* .tabControl .active:hover {
+    background-color: #2B6112;
+  } */
+  
+  .defaultTabControlPadding {
+    /* padding: 20px 19.75px; */
+  }
+  
+  .tabControlPadding {
+    padding: 5px 19.75px;
+  }
+  

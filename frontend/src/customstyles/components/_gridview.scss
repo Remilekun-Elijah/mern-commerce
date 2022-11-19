@@ -1,0 +1,56 @@
+.gridView {
+  grid-column: center-start/center-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+  gap: 5rem 7rem;
+  margin: 5rem 0;
+
+  .product {
+    display: grid;
+    grid-template-rows: 30rem auto;
+    grid-template-columns: 100%;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+
+    &__fig {
+      width: 100%;
+      height: 100%;
+      justify-self: center;
+    }
+    &__photo {
+      width: 100%;
+      height: 100%;
+    }
+
+    &__description {
+      align-self: start;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      margin: 0 1.2rem;
+
+      & > :not(:last-child) {
+        margin-right: auto;
+        text-transform: capitalize;
+      }
+
+      & > * {
+        font-size: 1.4rem;
+        color: inherit;
+      }
+    }
+
+    & a:link,
+    & a:visited {
+      text-decoration: none;
+    }
+
+    & a:hover,
+    & a:active {
+      color: var(--color-primary);
+    }
+  }
+}

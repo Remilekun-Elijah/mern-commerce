@@ -1,0 +1,77 @@
+.hero {
+  grid-column: full-start/full-end;
+  height: 23vw;
+
+  margin: 0.2rem;
+  margin-top: 0;
+
+  @include respond(tab-land) {
+    margin: 0.2rem 1rem;
+  }
+
+  @include respond(phone) {
+    height: 45vw;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    font-size: 1.8rem;
+    background-color: var(--color-primary-light);
+    display: grid;
+    grid-template-columns: 25% 22vw;
+    justify-content: center;
+    align-content: center;
+    gap: 0 12rem;
+
+    @include respond(phone) {
+      gap: 0 2rem;
+      grid-template-columns: minmax(min-content, max-content) 46vw;
+    }
+
+    & h3 {
+      text-align: center;
+      color: var(--color-secondary);
+      align-self: center;
+      justify-self: center;
+      @include respond(phone) {
+        font-size: 1.75rem;
+        margin: 0 1.5rem;
+      }
+    }
+
+    & figure {
+      width: 100%;
+      height: 100%;
+      align-self: center;
+      box-shadow: var(--shadow-light);
+    }
+
+    & img {
+      // display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: var(--color-grey-dark-2);
+  @include respond(tab-port) {
+    font-size: 3rem !important;
+  }
+  @include respond(phone) {
+    font-size: 2rem !important;
+    display: none !important;
+  }
+}
+
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  @include respond(phone) {
+    bottom: 0.4rem !important;
+  }
+}

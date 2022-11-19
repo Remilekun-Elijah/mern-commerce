@@ -1,0 +1,209 @@
+.header {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  padding-top: 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: var(--line);
+
+  @include respond(phone) {
+    position: relative;
+    align-items: start;
+    padding-top: 1.5rem;
+  }
+}
+
+.home {
+  height: 8rem;
+  position: sticky;
+  top: 0;
+  @include respond(phone) {
+    height: 12rem;
+  }
+}
+
+.pages {
+  align-items: center;
+}
+
+.logo {
+  border: none;
+  background-color: transparent;
+
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-left: 2.5rem;
+  color: var(--color-primary);
+
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
+
+  @include respond(tab-port) {
+    margin-left: 1.5rem;
+  }
+
+  @include respond(phone) {
+    margin-right: 2rem;
+    margin-left: 0.95rem;
+  }
+}
+
+.search {
+  width: 35rem;
+  position: relative;
+  display: flex;
+  flex: 0 0 40%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-left: 8rem;
+
+  @include respond(tab-port) {
+    margin-left: 2rem;
+  }
+
+  @include respond(phone) {
+    order: 1;
+    flex: 0 0 100%;
+    position: absolute;
+    display: block;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    bottom: 0.8rem;
+  }
+
+  &__input {
+    width: 80%;
+    font-family: inherit;
+    font-size: 1.6rem;
+    padding: 1.5rem 4.5rem 1.5rem 1.5rem;
+    background-color: #eaeaeb;
+    color: #6c6c6c;
+    border-radius: 0.6rem;
+    border: none;
+    transition: all 0.4s;
+
+    @include respond(tab-port) {
+      width: 85%;
+    }
+
+    @include respond(phone) {
+      width: 80%;
+    }
+
+    &:focus {
+      width: 90%;
+      border: none;
+      outline: none;
+      box-shadow: 0 1px 1.2rem #b8c6db;
+      -moz-box-shadow: 0 1px 1.2rem #b8c6db;
+      -webkit-box-shadow: 0 1px 1.2rem #b8c6db;
+      @include respond(tab-land) {
+        width: 90%;
+      }
+
+      @include respond(phone) {
+        width: 90%;
+      }
+    }
+  }
+
+  &__btn {
+    background-color: transparent;
+    font-size: 1.8rem;
+    padding: 0.6rem 0.9rem;
+    margin-left: -4.5rem;
+    border: none;
+    color: #6c6c6c;
+    transition: all 0.4s;
+    z-index: 10;
+
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(5, max-content);
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 0 5rem;
+  margin-right: 5rem;
+
+  @include respond(phone) {
+    gap: 0 1.5rem;
+    margin-right: 3rem;
+  }
+  button {
+    border: none;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
+
+    color: var(--color-grey-dark-2);
+    font-size: 2rem;
+  }
+
+  &__cart-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    position: relative;
+    margin-right: 1.8rem;
+
+    & span {
+      background-color: var(--color-primary);
+      color: #fff;
+      padding: 2.5px 1rem;
+      border-radius: 100%;
+      font-size: 1.1rem;
+      position: absolute;
+      left: 5.5rem;
+      top: -0.9rem;
+      cursor: default;
+
+      @include respond(phone) {
+        left: 5.4rem;
+        top: -1.3rem;
+      }
+    }
+  }
+  &__hamburger {
+    display: none;
+
+    color: var(--color-primary) !important;
+    &--close {
+      color: #e66b6b !important;
+    }
+    @include respond(phone) {
+      display: block;
+      font-weight: 600;
+      margin-left: 0.6rem;
+      font-size: 2.3rem !important;
+    }
+  }
+}

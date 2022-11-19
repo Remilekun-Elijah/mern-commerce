@@ -1,0 +1,110 @@
+.recommended-products {
+  grid-column: full-start/full-end;
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    // position: relative;
+  }
+
+  .swiper-slide figure {
+    width: 91%;
+    height: 91%;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .swiper-slide div {
+    display: grid;
+    grid-template-columns: minmax(min-content, max-content) min-content;
+    align-items: center;
+    gap: 0 30rem;
+    font-size: 1.3rem;
+
+    @include respond(tab-land) {
+      gap: 0 20rem;
+      line-height: 1;
+    }
+
+    @include respond(tab-port) {
+      gap: 0 9rem;
+    }
+
+    @include respond(phone) {
+      gap: 0 2rem;
+      font-size: 1.2rem;
+      padding: 0.2rem 0 2rem 0;
+
+      & > :not(:last-child) {
+        margin-left: 1.5rem;
+      }
+      & > :last-child {
+        margin-right: 1rem;
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 769px) {
+    .swiper-slide:first-child {
+      transition: transform 100ms;
+    }
+
+    .swiper-slide:first-child img {
+      transition: box-shadow 500ms;
+    }
+
+    .swiper-slide.swiper-slide-active:first-child {
+      transform: translateX(50%);
+      z-index: 2;
+    }
+
+    .swiper-slide:nth-child(2) {
+      transition: transform 100ms;
+    }
+
+    .swiper-slide.swiper-slide-next:nth-child(2) {
+      transform: translateX(55%);
+      z-index: 1;
+    }
+
+    .swiper[dir="rtl"] .swiper-slide.swiper-slide-active:first-child {
+      transform: translateX(-50%);
+    }
+
+    .swiper[dir="rtl"] .swiper-slide.swiper-slide-next:nth-child(2) {
+      transform: translateX(-55%);
+    }
+  }
+  .swiper-pagination-bullet {
+    background: none !important;
+    opacity: 0 !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 0 !important;
+    background: none !important;
+  }
+}
+
+.like {
+  grid-column: full-start/full-end;
+  font-size: 2rem;
+  margin: 2rem 0 0 4.5rem;
+
+  @include respond(phone) {
+    margin-left: 2rem;
+    font-size: 1.5rem;
+  }
+}
