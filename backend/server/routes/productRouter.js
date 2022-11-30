@@ -6,7 +6,7 @@ const upload = require("../../utils/imgUploader");
 router.post(
   "/",
   // authMiddleWare,
-  upload.array("images", 4),
+  upload.array("images", 5),
   controller.createProduct
 );
 

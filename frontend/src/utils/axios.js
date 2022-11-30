@@ -21,7 +21,7 @@ class API_INSTANCE {
   API.defaults.headers.common['Authorization'] = this.token || Storage.get(config.authProps[0]);
 
   const handleSessionExpired = (error) => {
-   const isNotAuth = ['authorization', 'auth', 'authorized', 'access forbidden', 'jwt expired', 'jwt', 'Forbidden...You are using an expired token', 'invalid signature'].find(msg => error?.response?.data?.error?.toLowerCase().includes(msg?.toLowerCase()) || error?.response?.data?.message?.toLowerCase().includes(msg?.toLowerCase()))
+   const isNotAuth = ['Token', 'jwt', "JSONWEBTOKEN"].find(msg => error?.response?.data?.error?.toLowerCase().includes(msg?.toLowerCase()) || error?.response?.data?.message?.toLowerCase().includes(msg?.toLowerCase()))
    const cb = () => setTimeout(_ => window.location.href = config.pageUrls.login, 2000),
     message = 'Session expired, please login again.';
 

@@ -1,6 +1,7 @@
 import React, { useState, createContext, useContext} from 'react';
 import Backend from "../utils/backend"
 import Alert from '../utils/alert'
+import { useNavigate } from 'react-router-dom';
 
 
 const CategoriesContext = createContext({})
@@ -10,6 +11,7 @@ export default function CategoriesProvider({children}) {
  const [categories, setCategories] = useState([])
  const [isLoading, setLoading] = useState(false)
 const [category, setCategory] = useState({image: "", name: ""})
+const navigate = useNavigate()
 
  const API = new Backend() 
  

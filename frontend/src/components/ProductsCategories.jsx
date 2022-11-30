@@ -13,7 +13,6 @@ const ProductsCategories = () => {
     (async () => {
       try {
         let res = await axios.get(`${API_ENDPOINT}category`);
-        console.log(res);
         if (res.data.success) {
           setCategories(res.data.data);
         }

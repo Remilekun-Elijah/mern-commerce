@@ -1,8 +1,7 @@
 import React, { useRef, useState } from "react";
 import { FiUploadCloud } from "react-icons/fi";
 import Header from "../../components/Navbar";
-import { useNavigate, useLocation } from "react-router-dom";
-// import { IArrowBack } from "../../utils/mock";
+import { useLocation } from "react-router-dom";
 import TabControl from "../../components/tabControl/TabControl";
 import CreateCategory from "../createCategory";
 import { useProductsContext } from "../../contexts/products";
@@ -11,7 +10,7 @@ import { useCategoriesContext } from "../../contexts/category";
 
 export default function Create() {
 	const { state } = useLocation();
-	
+
 	const form = useRef();
 	const [current, setCurrent] = useState("Product");
 	const { loading, product, handleChange, createProduct, clearForm } =
@@ -53,7 +52,7 @@ export default function Create() {
 						}}
 					/>
 				</div>
-				<div className="flex justify-center ">
+				<div className="flex justify-center">
 					{current === "Product" ? (
 						<form
 							ref={form}

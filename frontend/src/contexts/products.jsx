@@ -7,6 +7,8 @@ const ProductsContext = createContext({})
 export const useProductsContext = () => useContext(ProductsContext)
 
 export default function ProductsProvider({children}) {
+
+
   const navigate = useNavigate()
  const [products, setProducts] = useState([])
  const [loading, setLoading] = useState(false)
@@ -76,11 +78,12 @@ async function createProduct(e) {
 
   setLoading(false)
   if(res.success) {
-    clearForm()
-    navigate(`/products/${res.data.id}`, {state: res.data})  
+    clearForm() 
+    navigate('/')
   }
+
+  return res
   }catch(err) {
-    console.log(err);
     setLoading(false)
   }
 }
@@ -94,25 +97,25 @@ const action = state
     method: "post",
   };
 
-async function createProduct(e) {
-  e.preventDefault()
-  setLoading(true)
-  try{
+// async function createProduct(e) {
+//   e.preventDefault()
+//   setLoading(true)
+//   try{
 
-    let formdata = new FormData(e.target);
-  const res = await API.send({type: action.method, to: action.url, 
-  useAlert: true, payload: formdata})
+//     let formdata = new FormData(e.target);
+//   const res = await API.send({type: action.method, to: action.url, 
+//   useAlert: true, payload: formdata})
 
-  setLoading(false)
-  if(res.success) {
-    clearForm()
-    navigate(`/products/${res.data.id}`, {state: res.data})  
-  }
-  }catch(err) {
-    console.log(err);
-    setLoading(false)
-  }
-}
+//   setLoading(false)
+//   if(res.success) {
+//     clearForm()
+//     navigate(`/products/${res.data.id}`, {state: res.data})  
+//   }
+//   }catch(err) {
+//     console.log(err);
+//     setLoading(false)
+//   }
+// }
 
 
 async function deleteProduct (id, cb, error) {
